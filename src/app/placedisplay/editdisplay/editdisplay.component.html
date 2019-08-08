@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Edit Product</h1>
+    <form (ngSubmit)="onEditPlace(f)"   #f="ngForm" >
+      <div class="form-group">
+        <Label>Place Name</Label>
+        <input name="Name"  [(ngModel)]="name" class="form-control" placeholder="Enter Name">
+
+      </div>
+      <div class="form-group">
+        <Label>Desc</Label>
+        <input name="Desc" [(ngModel)]="description"  class="form-control" placeholder="Enter Dec">
+      </div>
+      <div class="form-group">
+        <Label>Address</Label>
+        <input name="Address" [(ngModel)]="address" class="form-control" placeholder="Enter Addressc">
+      </div>
+      <div class="form-group">
+        <Label>City</Label>
+        <input name="City" [(ngModel)]="city"  class="form-control" placeholder="Enter city">
+      </div>
+      <div class="form-group">
+        <Label>State</Label>
+        <input name="State" [(ngModel)]="state" class="form-control" placeholder="Enter state">
+      </div>
+      <div class="form-group">
+        <Label>Zip</Label>
+        <input name="Zip" [(ngModel)]="zip" class="form-control" placeholder="Enter zip">
+      </div>
+      <div class="form-group">
+          <Label>Country</Label>
+          <input name="Country" [(ngModel)]="country" class="form-control" placeholder="Enter country">
+        </div>
+        <div class="form-group">
+            <Label>Phone</Label>
+            <input name="Phone 1" [(ngModel)]="phone1" class="form-control" placeholder="Enter phone 1">
+          </div>
+          <div class="form-group">
+              <Label>Phone2</Label>
+              <input name="Phone 2" [(ngModel)]="phone2" class="form-control" placeholder="Enter phone 2">
+            </div>
+            <div class="form-group">
+                <Label>Fax</Label>
+                <input name="Fax" [(ngModel)]="fax" class="form-control" placeholder="Enter fax">
+              </div>
+              <div class="form-group">
+                  <Label>Website</Label>
+                  <input name="Website" [(ngModel)]="website" class="form-control" placeholder="Enter website">
+                </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update Product</button>
+      </div>
+    </form>
+  </div>

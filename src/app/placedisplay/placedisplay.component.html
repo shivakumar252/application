@@ -1,0 +1,288 @@
+<div class="col-md-3">
+    <input type="text" #f (keyup)="search(f.value)" placeholder="serch here">
+    <label>search</label>
+  </div>
+<div class="bodycontainer"></div>
+
+<h1>Skycliff IT Solutions</h1>
+
+
+<table class="table">
+    <thead>
+      <th>name</th>
+      <th>description</th>
+      <th>adress</th>
+      <th>city </th>
+      <th>state</th>
+      <th>zip</th>
+      <th>country</th>
+      <th>phone1</th>
+      <th>phone2</th>
+      <th>fax</th>
+      <th>website</th>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of arr">
+        <td >{{item.name  }}</td>
+        <td >{{item.description}}</td>
+        <td> {{item.adress}}</td>
+        <td> {{item.city}}</td>
+        <td> {{item.state}}</td>
+        <td> {{item.zip}}</td>
+        <td> {{item.country}}</td>
+        <td> {{item.phone1}}</td>
+        <td> {{item.phone2}}</td>
+        <td> {{item.fax}} </td>
+        <td> {{item.website}} </td>
+        <p>
+            <button class="btn"(click)="deleteTask(item)"  type="button"  aria-label="Left Align">Delete</button>&nbsp;&nbsp;
+            <button class="btn 1"(click)="open(content)">Add</button>&nbsp;&nbsp;
+            <button class="btn 2" (click)="open(contents,item)">Edit</button>
+        </p>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add </h4>
+      <button type="button" class="close bg bg-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!-- <div class='col-6'> -->
+      <form>
+        <div class="form-group">
+          <label for="name">name</label>
+          <div class="input-group">
+            <input id="Name" class="form-control" placeholder="Name" name="designame">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">description</label>
+          <div class="input-group">
+            <input id="Description" class="form-control" placeholder="Description" name="designame">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="adress">adress</label>
+          <div class="input-group">
+            <input id="adress" class="form-control" placeholder="adress" name="adress">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">city</label>
+          <div class="input-group">
+            <input id="city" class="form-control" placeholder="city" name="city">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">name</label>
+          <div class="input-group">
+            <input id="state" class="form-control" placeholder="state" name="state">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="zip">zip</label>
+          <div class="input-group">
+            <input id="zip" class="form-control" placeholder="zip" name="zip">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">country</label>
+          <div class="input-group">
+            <input id="country" class="form-control" placeholder="country" name="country">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone1">phone1</label>
+          <div class="input-group">
+            <input id="phone1" class="form-control" placeholder="phone1" name="phone1">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone2">phone 2</label>
+          <div class="input-group">
+            <input id="phone2" class="form-control" placeholder="phone2" name="phone2">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fax">fax</label>
+          <div class="input-group">
+            <input id="fax" class="form-control" placeholder="fax" name="fax">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="website">website</label>
+          <div class="input-group">
+            <input id="website" class="form-control" placeholder="website" name="website">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- </div> -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">submit</button>
+    </div>
+  </ng-template>
+
+
+
+  <ng-template #contents let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+      <button type="button" class="close bg bg-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">&nbsp;&nbsp;
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <!-- <div class='col-6'> -->
+      <form>
+        <div class="form-group">
+          <label for="name">name</label>
+          <div class="input-group">
+            <input id="Name"   [(ngModel)]="name"  type=text class="form-control" placeholder="Name" name="name">
+            <!-- <label class="alert alert-danger" *ngIf="name.hasError('required') && !name.pristine"  >Name is required </label> -->
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">description</label>
+          <div class="input-group">
+            <input id="Description"   [(ngModel)]="dec" type=text class="form-control" placeholder="Description" name="Description">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="adress">adress</label>
+          <div class="input-group">
+            <input id="adress" [(ngModel)]="address"  type=text class="form-control" placeholder="adress" name="adress">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="city">city</label>
+          <div class="input-group">
+            <input id="city" [(ngModel)]="city" type=text class="form-control" placeholder="city" name="city">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="state">name</label>
+          <div class="input-group">
+            <input id="state" [(ngModel)]="state"  class="form-control" placeholder="state" name="state">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="zip">zip</label>
+          <div class="input-group">
+            <input id="zip" [(ngModel)]="zip" class="form-control" placeholder="zip" name="zip">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">country</label>
+          <div class="input-group">
+            <input id="country" [(ngModel)]="country" class="form-control" placeholder="country" name="country">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone1">phone1</label>
+          <div class="input-group">
+            <input id="phone1"[(ngModel)]="phone" class="form-control" placeholder="phone1" name="phone1">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone2">phone 2</label>
+          <div class="input-group">
+            <input id="phone2" [(ngModel)]="phone2" class="form-control" placeholder="phone2" name="phone2">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fax">fax</label>
+          <div class="input-group">
+            <input id="fax" [(ngModel)]="fax" class="form-control" placeholder="fax" name="fax">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="website">website</label>
+          <div class="input-group">
+            <input id="website"  [(ngModel)]="website" class="form-control" placeholder="website" name="website">
+            <div class="input-group-append">
+              <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- </div> -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
