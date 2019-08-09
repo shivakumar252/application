@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Place } from './place';
 import { Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { PlacedataService } from './placedata.service';
 
 @Component({
   selector: 'app-placedisplay',
@@ -27,18 +28,25 @@ export class PlacedisplayComponent implements OnInit {
     new Place("2","mobile application development","club road","mangalore","kar",'560052',"india","080-614236","1234567523","","www.com"),
     new Place("3","offshoredep","39 pipline","hubli","kar","560023","india","080-614584","1234567656","","www.com")
   ];
-  router:any;
-  constructor(private _router:Router,private modalService: NgbModal) { }
+
+  constructor(private _router:Router, private _data:PlacedataService,  private modalService: NgbModal) { }
 
   ngOnInit() {
 // alert('processing');
     }
     deleteTask(item:Place){
-      alert('sure are you want to delete' )
-      console.log(item);
-
-      this.arr.splice(this.arr.indexOf(item),1);
+      var userPreference;
+      if (confirm("Do you want to delete?") == true){
+        this.arr.splice(this.arr.indexOf(item),1);
+         alert('deleted successfully');
     }
+    else {
+      userPreference = "Save Cancelled!";
+  }
+
+
+
+}
     onEditTaskClick(item:Place){
 
       this._router.navigate(['/editdisplay']);
@@ -83,6 +91,20 @@ export class PlacedisplayComponent implements OnInit {
       return  `with: ${reason}`;
     }
   }
+
+  onAddPlace() {
+    this.arr.push(new Place(this.name,this.dec,this.address,this.city,this.state,this.zip,this.country,this.phone,this.phone2,this.fax,this.website));
+
+  }
+
+  onEditPlace(f){
+    this._data.editPlace(this.name,f.value).subscribe(
+      (data:any)=>{
+        alert('updated');
+      }
+    );
+}
+
 
 
   // onSubmit(f){

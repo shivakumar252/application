@@ -10,6 +10,7 @@ import { EditdisplayComponent } from './placedisplay/editdisplay/editdisplay.com
 import { AdddisplayComponent } from './placedisplay/adddisplay/adddisplay.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
     routing,
     NgbModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

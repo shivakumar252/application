@@ -61,7 +61,7 @@
         <div class="form-group">
           <label for="name">name</label>
           <div class="input-group">
-            <input id="Name" class="form-control" placeholder="Name" name="designame">
+            <input  class="form-control"  [(ngModel)]="name"  placeholder="Name" name="name">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -70,7 +70,7 @@
         <div class="form-group">
           <label for="description">description</label>
           <div class="input-group">
-            <input id="Description" class="form-control" placeholder="Description" name="designame">
+            <input ngModel class="form-control" [(ngModel)]="dec" placeholder="Description" name="dec">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -79,7 +79,7 @@
         <div class="form-group">
           <label for="adress">adress</label>
           <div class="input-group">
-            <input id="adress" class="form-control" placeholder="adress" name="adress">
+            <input ngModel class="form-control"  [(ngModel)]="address" placeholder="adress" name="address">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -88,7 +88,7 @@
         <div class="form-group">
           <label for="city">city</label>
           <div class="input-group">
-            <input id="city" class="form-control" placeholder="city" name="city">
+            <input ngModel class="form-control"  [(ngModel)]="city" placeholder="city" name="city">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -97,7 +97,7 @@
         <div class="form-group">
           <label for="name">name</label>
           <div class="input-group">
-            <input id="state" class="form-control" placeholder="state" name="state">
+            <input ngModel class="form-control"  [(ngModel)]="state"  placeholder="state" name="state">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -106,7 +106,7 @@
         <div class="form-group">
           <label for="zip">zip</label>
           <div class="input-group">
-            <input id="zip" class="form-control" placeholder="zip" name="zip">
+            <input ngModel class="form-control"  [(ngModel)]="zip"placeholder="zip" name="zip">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -116,7 +116,7 @@
         <div class="form-group">
           <label for="country">country</label>
           <div class="input-group">
-            <input id="country" class="form-control" placeholder="country" name="country">
+            <input ngModel class="form-control" [(ngModel)]="country"  placeholder="country" name="country">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -125,7 +125,7 @@
         <div class="form-group">
           <label for="phone1">phone1</label>
           <div class="input-group">
-            <input id="phone1" class="form-control" placeholder="phone1" name="phone1">
+            <input ngModel class="form-control"  [(ngModel)]="phone" placeholder="phone" name="phone">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -134,7 +134,7 @@
         <div class="form-group">
           <label for="phone2">phone 2</label>
           <div class="input-group">
-            <input id="phone2" class="form-control" placeholder="phone2" name="phone2">
+            <input id="phone2" [(ngModel)]="phone2" class="form-control" placeholder="phone2" name="phone2">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -143,7 +143,7 @@
         <div class="form-group">
           <label for="fax">fax</label>
           <div class="input-group">
-            <input id="fax" class="form-control" placeholder="fax" name="fax">
+            <input ngModel class="form-control"  [(ngModel)]="fax"  placeholder="fax" name="fax">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -152,7 +152,7 @@
         <div class="form-group">
           <label for="website">website</label>
           <div class="input-group">
-            <input id="website" class="form-control" placeholder="website" name="website">
+            <input ngModel class="form-control"   [(ngModel)]="website" placeholder="website" name="website">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -162,11 +162,11 @@
     </div>
     <!-- </div> -->
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">submit</button>
+      <button type="button" class="btn btn-outline-dark" (click)="onAddPlace()">submit</button>
     </div>
   </ng-template>
 
-
+ <!-- Editing form -->
 
   <ng-template #contents let-modal>
     <div class="modal-header">
@@ -181,7 +181,7 @@
         <div class="form-group">
           <label for="name">name</label>
           <div class="input-group">
-            <input id="Name"   [(ngModel)]="name"  type=text class="form-control" placeholder="Name" name="name">
+            <input id="Name"  name="name" [(ngModel)]="name"  type=text class="form-control" placeholder="Name" >
             <!-- <label class="alert alert-danger" *ngIf="name.hasError('required') && !name.pristine"  >Name is required </label> -->
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
@@ -191,7 +191,7 @@
         <div class="form-group">
           <label for="description">description</label>
           <div class="input-group">
-            <input id="Description"   [(ngModel)]="dec" type=text class="form-control" placeholder="Description" name="Description">
+            <input id="Description"   [(ngModel)]="dec" type=text class="form-control" placeholder="Description" name="dec">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -200,7 +200,7 @@
         <div class="form-group">
           <label for="adress">adress</label>
           <div class="input-group">
-            <input id="adress" [(ngModel)]="address"  type=text class="form-control" placeholder="adress" name="adress">
+            <input id="adress" [(ngModel)]="address"  type=text class="form-control" placeholder="adress" name="address">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -246,7 +246,7 @@
         <div class="form-group">
           <label for="phone1">phone1</label>
           <div class="input-group">
-            <input id="phone1"[(ngModel)]="phone" class="form-control" placeholder="phone1" name="phone1">
+            <input id="phone1"[(ngModel)]="phone" class="form-control" placeholder="phone1" name="phone">
             <div class="input-group-append">
               <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> -->
             </div>
@@ -283,6 +283,7 @@
     </div>
     <!-- </div> -->
     <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="onEditPlace()">submit</button>
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
     </div>
   </ng-template>
